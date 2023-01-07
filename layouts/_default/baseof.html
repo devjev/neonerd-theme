@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body class="page destination">
+        <main>
+            {{- partial "header.html" . -}}
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+
+        <script>
+          const year = (new Date()).getFullYear()
+          const footer = document.getElementById('this-year-span')
+          if (footer && year > 2022) {
+            footer.innerHTML = `&nbsp;&mdash;&nbsp;${year}`
+          }
+        </script>
+    </body>
+</html>

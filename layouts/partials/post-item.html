@@ -1,0 +1,22 @@
+<article class="copy">
+
+    {{ if .Title }}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ end }}
+
+    {{ .Content }}
+
+    <ul class="horizontal small-text">
+        <li class="date-tag">
+            <a href="{{ .Permalink }}">
+                <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">
+                {{ .Date.Format "02 Jan 2023, 15:32" }}
+                </time>
+            </a>
+        </li>
+<!--        figure out how to add tags / categories here -->
+<!--        <li class="tag"><a href="xx">hyperconsumption</a></li>-->
+<!--        <li class="tag"><a href="xx">stolen from the internet</a></li>-->
+<!--        <li class="tag"><a href="xx">internet, the good parts</a></li>-->
+    </ul>
+</article>
