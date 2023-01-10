@@ -1,5 +1,12 @@
 <h1 class="page-title">
-    <div class="title">tarassov.blog</div>
+    <div class="title">
+        {{- block "title" . -}}
+        {{- .Site.Title -}}
+        {{- if and .Title (ne .Title .Site.Title) }}
+        - {{ .Title }}
+        {{- end -}}
+        {{- end -}}
+    </div>
     <div class="subtitle">
         <ul class="horizontal">
             <li><a href="/photos/">Photos</a></li>
