@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article>
+    <header>
+        {{ with .Title }}
+        <h1>{{ . }}</h1>
+        {{ end }}
+        <h2>
+            <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">
+            <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+            </time>
+        </h2>
+    </header>
+    <section class="copy">
+        {{ .Content }}
+    </section>
+
+    {{ if .Site.Params.include_conversation }}
+    <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+    {{ end }}
+</article>
+{{ end }}
